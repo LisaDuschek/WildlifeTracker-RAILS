@@ -2,6 +2,6 @@
 
 <ul>
   <% @species.each do |species| %>
-  <li><%= species.name %></li>
+    <li><%= link_to species.name, species_path(species) %></li>
   <% end %>
 </ul>
