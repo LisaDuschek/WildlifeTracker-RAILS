@@ -43,7 +43,6 @@ class SpeciesController < ApplicationController
     @species = Species.find(params[:id])
     @species.destroy
     redirect_to species_index_path
-
   end
 
   private
