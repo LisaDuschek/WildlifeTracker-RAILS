@@ -14,8 +14,6 @@ class SpeciesController < ApplicationController
     end
   end
 
-
-
   def new
     @species = Species.new
     render :new
@@ -41,12 +39,15 @@ class SpeciesController < ApplicationController
     end
   end
 
-  # def destroy
-  #
-  # end
-  private
-  def species_params
-   params.require(:species).permit(:name)
+  def destroy
+    @species = Species.find(params[:id])
+    @species.destroy
+    redirect_to species_index_path
+
   end
 
+  private
+  def species_params
+    params.require(:species).permit(:name)
+  end
 end
