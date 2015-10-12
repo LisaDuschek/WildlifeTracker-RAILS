@@ -1,0 +1,7 @@
+<h1>All Sightings</h1>
+
+<ul>
+  <% @sightings.each do |sighting| %>
+    <li><%= link_to sighting.name, species_sighting_path(sighting.species, sighting) %></li>
+  <% end %>
+</ul>
